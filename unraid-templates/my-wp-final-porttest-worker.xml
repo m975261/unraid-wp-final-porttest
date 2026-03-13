@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <n>wp-final-porttest-worker</n>
+  <Repository>muaeabudhabi/wp-final-porttest:latest</Repository>
+  <Registry>https://hub.docker.com/r/muaeabudhabi/wp-final-porttest/</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/howardchung/watchparty</Support>
+  <Project>https://github.com/howardchung/watchparty</Project>
+  <Overview>Generic background worker for wp-final-porttest. Same image as main app, different start command.</Overview>
+  <Description>Generic worker process for wp-final-porttest.</Description>
+  <Category>Tools: Other:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/m975261/unraid-wp-final-porttest/main/unraid-templates/my-wp-final-porttest-worker.xml</TemplateURL>
+  <ExtraParams/>
+  <PostArgs>npm run worker</PostArgs>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>my-wp-final-porttest</Requires>
+  <Config Name="AppData" Target="/data" Default="/mnt/user/appdata/wp-final-porttest/data" Mode="rw" Description="Shared data with main app" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/wp-final-porttest/data</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Timezone" Target="TZ" Default="UTC" Mode="" Description="Timezone" Type="Variable" Display="always" Required="false" Mask="false">UTC</Config>
+</Container>
